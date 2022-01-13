@@ -5,14 +5,15 @@ import Characters from './components/screens/Characters';
 import Character from './components/screens/Character';
 import Login from './components/screens/Login';
 import SignUp from './components/screens/SignUp';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
     return (
         <>
             <Router>
                 <Routes>
-                    <Route path="/" exact element={<Characters />} />
-                    <Route path="/character/:id" element={<Character />} />
+                    <PrivateRoute path="/" exact element={<Characters />} />
+                    <PrivateRoute path="/character/:id" element={<Character />} />
                     <Route path="/auth/login/" element={<Login />}/>
                     <Route path="/auth/register/" element={<SignUp />}/>
                 </Routes>
