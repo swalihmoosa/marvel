@@ -12,8 +12,8 @@ function App() {
         <>
             <Router>
                 <Routes>
-                    <PrivateRoute path="/" exact element={<Characters />} />
-                    <PrivateRoute path="/character/:id" element={<Character />} />
+                    <Route path="/" exact element={<Characters />} />
+                    <Route path="/character/:id" element={<Character />} />
                     <Route path="/auth/login/" element={<Login />}/>
                     <Route path="/auth/register/" element={<SignUp />}/>
                 </Routes>
