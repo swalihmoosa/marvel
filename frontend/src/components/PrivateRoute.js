@@ -1,18 +1,13 @@
-// import React from 'react'
-// import {Navigate, Route} from 'react-router-dom'
+import React from 'react'
+import {Navigate, Route} from 'react-router-dom'
+import Characters from './screens/Characters';
 
 
-// export default function PrivateRoute({element:Element, ...rest}) {
-//     const user_data = JSON.parse(localStorage.getItem("user_data"));
-
-//     return (
-//         <Route {...rest} render={(props)=>{
-//             if (user_data){
-//                 return <Element {...props} />
-//             }else{
-//                 return <Navigate to={{pathname:'/auth/login'}} />
-//             }
-//         }}
-//         />
-//     )
-// }
+export default function PrivateRoute({isLoggin}) {
+    console.log("jhsgdh");
+    
+    return (
+        // <Route {...rest}>{children}</Route>
+        isLoggin ? <Characters /> : <Navigate to={'/login'} />
+    )
+}

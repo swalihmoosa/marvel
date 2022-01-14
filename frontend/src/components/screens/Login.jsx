@@ -30,22 +30,22 @@ export default function Login() {
 
         return (
             <>
-                <div class="login">
-                    <div class="log">
-                        <Link to={`/auth/login/`} className="log"> sign in </Link>
-                        <Link to={`/auth/register/`} className="log"> sign up </Link>
+                <div className="login">
+                    <div className="log">
+                        <Link to={`/login/`} className="log"> sign in </Link>
+                        <Link to={`/register/`} className="log"> sign up </Link>
                     </div>
                     <form onSubmit={handleSubmit}>
-                        <input type="text" class="text" name="username" onChange={(e) => setUsername(e.target.value) } value={username} />
+                        <input type="text" className="text" name="username" onChange={(e) => setUsername(e.target.value) } value={username} />
                         <p className="span">username</p>
                         <br />
                         <br />
-                        <input type="password" class="text" name="password" onChange={(e) => setPassword(e.target.value) } value={password} />
+                        <input type="password" className="text" name="password" onChange={(e) => setPassword(e.target.value) } value={password} />
                         <p className="span">password</p>
                         <br />
-                        <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" name="keep_signin" />
-                        <label for="checkbox-1-1">Keep me Signed in</label>    
-                        <button class="signin">Sign In</button>
+                        <input type="checkbox" id="checkbox-1-1" className="custom-checkbox" name="keep_signin" />
+                        <label>Keep me Signed in</label>    
+                        <button className="signin">Sign In</button>
                         <br />
                         {message && <ErrorMessage>{message}</ErrorMessage>}
                         <hr />

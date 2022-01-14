@@ -32,25 +32,25 @@ export default function SignUp() {
 
         return (
             <>
-                <div class="login">
-                    <div class="log">
-                        <Link to={`/auth/login/`} className="log"> sign in </Link>
-                        <Link to={`/auth/register/`} className="log"> sign up</Link>
+                <div className="login">
+                    <div className="log">
+                        <Link to={`/login/`} className="log"> sign in </Link>
+                        <Link to={`/register/`} className="log"> sign up</Link>
                     </div>
                     <form onSubmit={handleSubmit}>
-                        <input type="text" class="text" name="username" onChange={(e) => setUsername(e.target.value) } value={username} />
+                        <input type="text" className="text" name="username" onChange={(e) => setUsername(e.target.value) } value={username} />
                         <p className="span">username</p>
                         <br />
-                        <input type="email" class="text" name="email" onChange={(e) => setEmail(e.target.value) } value={email} />
+                        <input type="email" className="text" name="email" onChange={(e) => setEmail(e.target.value) } value={email} />
                         <p className="span">email</p>
                         <br />
-                        <input type="password" class="text" name="confirm_password" onChange={(e) => setPassword(e.target.value) } value={password} />
+                        <input type="password" className="text" name="confirm_password" onChange={(e) => setPassword(e.target.value) } value={password} />
                         <p className="span">password</p>
                         <br />
-                        <input type="password" class="text" name="password" onChange={(e) => setConfirm(e.target.value) } value={confirm} />
+                        <input type="password" className="text" name="password" onChange={(e) => setConfirm(e.target.value) } value={confirm} />
                         <p className="span">confirm password</p>
                         <br />
-                        <button class="signin">Sign Up</button>
+                        <button className="signin">Sign Up</button>
                         {message && <ErrorMessage>{message}</ErrorMessage>}
                         <hr />
                     </form>

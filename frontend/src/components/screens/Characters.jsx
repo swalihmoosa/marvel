@@ -24,7 +24,6 @@ export default function Characters() {
         axios
             .get(`https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
             .then((response) => {
-                console.log(response.data.data.results);
                 setCharacters(response.data.data.results);
             })
             .catch((error) => {
