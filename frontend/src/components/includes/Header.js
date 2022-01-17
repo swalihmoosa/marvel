@@ -2,16 +2,21 @@ import React, {useContext} from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
+import logo from "../assets/images/favicon.ico"
 
 function Header() {
     const userData = useContext(UserContext)
 
     return (
         <HeaderContainer>
-            <Logo
-                src={require("../assets/images/marvel-phone-nawpic.jpg").default}
-                alt="Logo"
-            />
+            <LogoContainer>
+                <Link to={`/`} >
+                    <Logo
+                        src={logo}
+                        alt="Logo"
+                    />
+                </Link>
+            </LogoContainer>
             <RightContainer>
                 {userData? (
                         <LoginButton to={`/login/`}>Logout</LoginButton>
@@ -31,8 +36,11 @@ const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
 `;
+const LogoContainer = styled.div`
+    width: 65px;
+`
 const Logo = styled.img`
-    width: 150px;
+    width: 100%;
     display: block;
 `;
 const RightContainer = styled.div`
