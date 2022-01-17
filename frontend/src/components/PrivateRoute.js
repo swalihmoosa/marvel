@@ -1,13 +1,12 @@
 import React from 'react'
-import {Navigate, Route} from 'react-router-dom'
+import {Navigate, Outlet, Route} from 'react-router-dom'
 import Characters from './screens/Characters';
 
 
-export default function PrivateRoute({isLoggin}) {
+export default function PrivateRoute({isLoggin, children, ...rest}) {
     console.log("jhsgdh");
     
     return (
-        // <Route {...rest}>{children}</Route>
-        isLoggin ? <Characters /> : <Navigate to={'/login'} />
+        isLoggin ? <Outlet /> : <Navigate to={'/login'} />
     )
 }
