@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
 
 // https://gateway.marvel.com:443/v1/public/characters?apikey=f7a9b0d8dfa07041696a04e6df7da8c2
 
@@ -19,6 +20,7 @@ import { Link } from "react-router-dom";
 
 export default function Characters() {
     const [characters, setCharacters] = useState([]);
+    // const {name} = useContext(UserContext)
 
     useEffect(() => {
         axios
@@ -52,7 +54,7 @@ export default function Characters() {
                 <title>Marvel Characters</title>
             </Helmet>
             <TopContainer>
-                <Heading>Welcome</Heading>
+                <Heading>Welcome </Heading>
                 <Paragraph>Explore the Famous Marvel Characters</Paragraph>
             </TopContainer>
 

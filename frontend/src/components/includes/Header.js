@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 function Header() {
+
     return (
         <HeaderContainer>
             <Logo
@@ -10,7 +11,7 @@ function Header() {
                 alt="Logo"
             />
             <RightContainer>
-                <LoginButton to={`/login/`}>Login</LoginButton>
+                <LoginButton to={`/login/`}>Logout</LoginButton>
             </RightContainer>
         </HeaderContainer>
     );

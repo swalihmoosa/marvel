@@ -7,21 +7,38 @@ import Login from './components/screens/Login';
 import SignUp from './components/screens/SignUp';
 import PrivateRoute from './components/PrivateRoute';
 import Header from './components/includes/Header';
+import React, { useEffect, useState } from 'react';
+
+
+export const UserContext = React.createContext();
 
 
 function App() {
+    const [userData, setUserData] = useState()
+    const [user, setUser] = useState()
+    const [userToken, setUserToken] = useState()
+
+    useEffect(() =>{
+        setUserData(JSON.parse(localStorage.getItem("user_data")))
+    }, [])
+
     return (
-        <Router>
-            <Header />
-            <Routes>
-                <Route element={<PrivateRoute isLoggin={true} />}>
-                    <Route exact path='/' element={<Characters/>}/>
-                </Route>
-                <Route path="/character/:id" element={<Character />} />
-                <Route path="/login/" element={<Login />}/>
-                <Route path="/register/" element={<SignUp />}/>
-            </Routes>
-        </Router>
+        <UserContext.Provider value={userData}>
+            <Router>
+                <Header />
+                <Routes>
+                    <Route element={<PrivateRoute isLoggin={true} />}>
+                        <Route exact path='/' element={<Characters/>}/>
+                    </Route>
+                    <Route element={<PrivateRoute isLoggin={false} />}>
+                        <Route exact path='/character/:id' element={<Character />}/>
+                    </Route>
+                    {/* <Route path="/character/:id" element={<Character />} /> */}
+                    <Route path="/login/" element={<Login />}/>
+                    <Route path="/register/" element={<SignUp />}/>
+                </Routes>
+            </Router>
+        </UserContext.Provider>
     )
 }
 

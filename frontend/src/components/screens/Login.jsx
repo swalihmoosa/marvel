@@ -15,7 +15,7 @@ export default function Login() {
         setMessage("")
         e.preventDefault();
         axios
-        .post(``, {username , password})
+        .post(`http://localhost:8000/api/token/`, {username,password})
         .then((response) => {
             console.log(response);
             let data = response

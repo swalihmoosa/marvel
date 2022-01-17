@@ -3,7 +3,7 @@ import {Navigate, Outlet, Route} from 'react-router-dom'
 import Characters from './screens/Characters';
 
 
-export default function PrivateRoute({isLoggin, children, ...rest}) {
+export default function PrivateRoute({isLoggin}) {
     console.log("jhsgdh");
     
     return (
