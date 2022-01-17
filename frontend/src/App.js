@@ -15,8 +15,6 @@ export const UserContext = React.createContext();
 
 function App() {
     const [userData, setUserData] = useState()
-    const [user, setUser] = useState()
-    const [userToken, setUserToken] = useState()
 
     useEffect(() =>{
         setUserData(JSON.parse(localStorage.getItem("user_data")))

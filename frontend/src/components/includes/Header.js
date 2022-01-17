@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
 
 function Header() {
+    const userData = useContext(UserContext)
 
     return (
         <HeaderContainer>
@@ -11,7 +13,12 @@ function Header() {
                 alt="Logo"
             />
             <RightContainer>
-                <LoginButton to={`/login/`}>Logout</LoginButton>
+                {userData? (
+                        <LoginButton to={`/login/`}>Logout</LoginButton>
+                    ) : (
+                        <LoginButton to={`/login/`}>Login</LoginButton>
+                    )
+                }
             </RightContainer>
         </HeaderContainer>
     );

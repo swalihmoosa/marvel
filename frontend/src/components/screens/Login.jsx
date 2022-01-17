@@ -2,12 +2,14 @@ import React, {useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
+import jwt_decode from "jwt-decode"
 
 
 export default function Login() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [message, setMessage] = useState("")
+
 
     const navigate = useNavigate()
 
@@ -17,9 +19,8 @@ export default function Login() {
         axios
         .post(`http://localhost:8000/api/token/`, {username,password})
         .then((response) => {
-            console.log(response);
-            let data = response
-            localStorage.setItem("user_data", JSON.stringify(data))
+            let user_data = response.data
+            localStorage.setItem("user_data", JSON.stringify(user_data))
             navigate("/")
         })
         .catch((error) => {
