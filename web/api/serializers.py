@@ -1,4 +1,5 @@
 from cmath import log
+import email
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
@@ -17,7 +18,10 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
     def create(self, validated_data):        
-        print("#################################################################validate",validated_data['username'])
+        if User.objects.filter(email=validated_data['email']).exists:
+            raise serializers.ValidationError({'email' : ("email already exists")})
+        if User.objects.filter(email=validated_data['email']).exists:
+            raise serializers.ValidationError({'email' : ("email already exists")})
         user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
 
         return user
