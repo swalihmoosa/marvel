@@ -17,11 +17,11 @@ class RegisterSerializer(serializers.ModelSerializer):
         extra_kwargs = {'password': {'write_only': True}}
 
 
-    def create(self, validated_data):        
-        if User.objects.filter(email=validated_data['email']).exists:
-            raise serializers.ValidationError({'email' : ("email already exists")})
-        if User.objects.filter(email=validated_data['email']).exists:
-            raise serializers.ValidationError({'email' : ("email already exists")})
+    def create(self, validated_data):
+        print("###########################$$$$$$$$$$$$$$$$$",User.objects.filter(email=validated_data["email"]))  
+        if User.objects.filter(email=validated_data["email"]):
+            raise serializers.ValidationError({'email' : ("A user with that email already exists.")})
+
         user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
 
         return user

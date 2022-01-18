@@ -8,7 +8,6 @@ export default function SignUp() {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [confirm, setConfirm] = useState("")
     const [message, setMessage] = useState("")
 
     const navigate = useNavigate()
@@ -17,7 +16,7 @@ export default function SignUp() {
         setMessage("")
         e.preventDefault();
         axios
-        .post(`http://localhost:8000/api/register/`, {username , email, password, confirm})
+        .post(`http://localhost:8000/api/register/`, {username , email, password})
         .then(()=>{
             navigate("/login")
         }
@@ -45,8 +44,6 @@ export default function SignUp() {
                         <input type="password" className="text" name="password" onChange={(e) => setPassword(e.target.value) } value={password} />
                         <p className="span">password</p>
                         <br />
-                        <input type="password" className="text" name="confirm_password" onChange={(e) => setConfirm(e.target.value) } value={confirm} />
-                        <p className="span">confirm password</p>
                         <br />
                         <button className="signin">Sign Up</button>
                         {message && <ErrorMessage>{message}</ErrorMessage>}
