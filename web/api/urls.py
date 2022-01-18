@@ -1,6 +1,6 @@
 from unicodedata import name
 from django.urls import path
-from web.api.views import getRoutes, MyTokenObtainPairView
+from web.api.views import RegisterAPI, getRoutes, MyTokenObtainPairView
 
 
 
@@ -15,4 +15,6 @@ urlpatterns = [
 
     path('token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('register/', RegisterAPI.as_view(), name='register'),
+
 ]
