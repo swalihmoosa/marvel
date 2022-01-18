@@ -17,13 +17,11 @@ export default function SignUp() {
         setMessage("")
         e.preventDefault();
         axios
-        .post(``, {username , email, password, confirm})
-        .then((response) => {
-            console.log(response);
-            let data = response
-            // localStorage.setItem("user_data", JSON.stringify(data))
-            // navigate("/auth/login")
-        })
+        .post(`http://localhost:8000/api/register/`, {username , email, password, confirm})
+        .then(()=>{
+            navigate("/login")
+        }
+        )
         .catch((error) => {
             console.log(error);
             setMessage("Account was not Created")
@@ -44,10 +42,10 @@ export default function SignUp() {
                         <input type="email" className="text" name="email" onChange={(e) => setEmail(e.target.value) } value={email} />
                         <p className="span">email</p>
                         <br />
-                        <input type="password" className="text" name="confirm_password" onChange={(e) => setPassword(e.target.value) } value={password} />
+                        <input type="password" className="text" name="password" onChange={(e) => setPassword(e.target.value) } value={password} />
                         <p className="span">password</p>
                         <br />
-                        <input type="password" className="text" name="password" onChange={(e) => setConfirm(e.target.value) } value={confirm} />
+                        <input type="password" className="text" name="confirm_password" onChange={(e) => setConfirm(e.target.value) } value={confirm} />
                         <p className="span">confirm password</p>
                         <br />
                         <button className="signin">Sign Up</button>
