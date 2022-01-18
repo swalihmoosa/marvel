@@ -30,7 +30,7 @@ export default function SignUp() {
 
         return (
             <>
-                <div className="login">
+                <div className="signup">
                     <div className="log">
                         <Link to={`/login/`} className="log"> sign in </Link>
                         <Link to={`/register/`} className="log"> sign up</Link>
