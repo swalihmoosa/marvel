@@ -5,7 +5,13 @@ import { UserContext } from "../../App";
 import logo from "../assets/images/favicon.ico"
 
 function Header() {
-    const userData = useContext(UserContext)
+    const {userData, updateUserData} = useContext(UserContext)
+
+    const handleLogout = () =>{
+        updateUserData({
+            type : "LOGOUT"
+        })
+    }
 
     return (
         <HeaderContainer>
@@ -19,7 +25,7 @@ function Header() {
             </LogoContainer>
             <RightContainer>
                 {userData? (
-                        <LoginButton to={`/login/`}>Logout</LoginButton>
+                        <LoginButton to={`/login/`} onClick={()=> handleLogout() } >Logout</LoginButton>
                     ) : (
                         <LoginButton to={`/login/`}>Login</LoginButton>
                     )

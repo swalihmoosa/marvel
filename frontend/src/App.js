@@ -14,14 +14,23 @@ export const UserContext = React.createContext();
 
 
 function App() {
-    const [userData, setUserData] = useState()
+    const [userData, setUserData] = useState({})
+    const updateUserData = (action) =>{
+        switch (action.type){
+            case "LOGOUT":
+                setUserData(null);
+                localStorage.clear();
+            default:
+                break;
+        }
+    }
 
     useEffect(() =>{
         setUserData(JSON.parse(localStorage.getItem("user_data")))
     }, [])
 
     return (
-        <UserContext.Provider value={userData}>
+        <UserContext.Provider value={{userData, updateUserData }}>
             <Router>
                 <Header />
                 <Routes>

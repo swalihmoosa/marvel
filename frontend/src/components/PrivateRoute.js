@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Navigate, Outlet, Route} from 'react-router-dom'
-import Characters from './screens/Characters';
+import { UserContext } from '../App'
 
 
-export default function PrivateRoute({isLoggin}) {
-    console.log("jhsgdh");
+export default function PrivateRoute({}) {
+    const userData = JSON.parse(localStorage.getItem("user_data"))
+
     
     return (
-        isLoggin ? <Outlet /> : <Navigate to={'/login'} />
+        userData ? <Outlet /> : <Navigate to={'/login'} />
     )
 }
