@@ -24,7 +24,7 @@ export default function SignUp() {
         )
         .catch((error) => {
             console.log(error);
-            setMessage("Account was not Created")
+            setMessage("Account was not Created...! Username or Email already exist...!")
         });
     }
 
