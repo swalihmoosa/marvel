@@ -18,7 +18,6 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
     def create(self, validated_data):
-        print("###########################$$$$$$$$$$$$$$$$$",User.objects.filter(email=validated_data["email"]))  
         if User.objects.filter(email=validated_data["email"]):
             raise serializers.ValidationError({'email' : ("A user with that email already exists.")})
 
