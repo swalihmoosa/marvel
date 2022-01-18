@@ -22,7 +22,7 @@ export default function Character() {
 
     const renderCharacters = () => {
         return characters.map((character) => (
-            <MainContainer>
+            <MainContainer key={character.id} >
                 <Title>{character.name}</Title>
                 <InfoContainer>
                     <CategoryName>
@@ -36,7 +36,7 @@ export default function Character() {
                     <ItemContainer>
                         <SubHeading>Comic Items</SubHeading>
                         {character.comics.items.map((item) => (
-                            <GalleryItem>{item.name}</GalleryItem>
+                            <GalleryItem >{item.name}</GalleryItem>
                         ))}
                     </ItemContainer>
                 </Item>

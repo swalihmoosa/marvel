@@ -20,7 +20,6 @@ import { UserContext } from "../../App";
 
 export default function Characters() {
     const [characters, setCharacters] = useState([]);
-    // const {name} = useContext(UserContext)
 
     useEffect(() => {
         axios

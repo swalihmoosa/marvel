@@ -34,13 +34,12 @@ function App() {
             <Router>
                 <Header />
                 <Routes>
-                    <Route element={<PrivateRoute isLoggin={true} />}>
+                    <Route element={<PrivateRoute /> }>
                         <Route exact path='/' element={<Characters/>}/>
                     </Route>
-                    <Route element={<PrivateRoute isLoggin={false} />}>
+                    <Route element={<PrivateRoute />}>
                         <Route exact path='/character/:id' element={<Character />}/>
                     </Route>
-                    {/* <Route path="/character/:id" element={<Character />} /> */}
                     <Route path="/login/" element={<Login />}/>
                     <Route path="/register/" element={<SignUp />}/>
                 </Routes>
