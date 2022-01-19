@@ -2,9 +2,6 @@ from unicodedata import name
 from django.urls import path
 from web.api.views import RegisterAPI, getRoutes, MyTokenObtainPairView
 
-
-
-
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
