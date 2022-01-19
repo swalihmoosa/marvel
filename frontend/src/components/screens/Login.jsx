@@ -1,7 +1,8 @@
-import React, {useState } from "react";
+import React, {useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
+import { UserContext } from "../../App";
 
 
 export default function Login() {
@@ -9,6 +10,7 @@ export default function Login() {
     const [password, setPassword] = useState("")
     const [message, setMessage] = useState("")
 
+    const {updateUserData} = useContext(UserContext)
 
     const navigate = useNavigate()
 
@@ -20,6 +22,10 @@ export default function Login() {
         .then((response) => {
             let user_data = response.data
             localStorage.setItem("user_data", JSON.stringify(user_data))
+            updateUserData({
+                type : "LOGIN",
+                payload : user_data
+            })
             navigate("/")
         })
         .catch((error) => {

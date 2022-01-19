@@ -5,6 +5,7 @@ import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 
+
 // https://gateway.marvel.com:443/v1/public/characters?apikey=f7a9b0d8dfa07041696a04e6df7da8c2
 
 // private_key = afb5f26802a4cb2f068d300208dd915849459dc7
