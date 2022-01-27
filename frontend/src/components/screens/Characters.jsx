@@ -83,6 +83,11 @@ export default function Characters() {
                 <Paragraph>Explore the Famous Marvel Characters</Paragraph>
             </TopContainer>
 
+            <Form>
+                <Search type="text" placeholder="Search your Characters" />
+                <Go type="submit" value="Go" />
+            </Form>
+
             <CharactersContainer>{renderCharacters()}</CharactersContainer>
             <Load onClick={() => {setCharacterShow(characterShow => !characterShow)}} >{characterShow ? 'Load Less':'Load More'}</Load>
             <Comicparagraph>Explore the Famous Marvel Comics</Comicparagraph>
@@ -154,6 +159,25 @@ const Load = styled.button`
     margin-bottom: 100px;
 `
 const Comicparagraph = styled.p`
+    font-size: 22px;
+    color: #9292ed;
+    font-weight: 900;
+    width: 90%;
+    margin: 0 auto ;
+`;
+const Form = styled.form`
+    width: 50%;
+    margin: 0 auto;
+    padding:0;
+`;
+const Search = styled.input`
+    font-size: 22px;
+    color: #9292ed;
+    font-weight: 900;
+    width: 90%;
+    margin: 0 auto ;
+`;
+const Go = styled.input`
     font-size: 22px;
     color: #9292ed;
     font-weight: 900;
