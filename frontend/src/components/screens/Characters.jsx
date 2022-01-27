@@ -20,15 +20,21 @@ import { Link } from "react-router-dom";
 
 export default function Characters() {
     const [characters, setCharacters] = useState([]);
-    const [comics, setComics] = useState([]);
+    const [allCharacters, setAllCharacters] = useState([]);
     const [characterShow, setCharacterShow] = useState(false);
+    const [searchCharacterId, setSearchCharacterId] = useState("");
+
+    const [comics, setComics] = useState([]);
+    const [allComics, setAllComics] = useState([]);
     const [comicShow, setComicShow] = useState(false);
+    const [searchComicId, setSearchComicId] = useState("");
 
     useEffect(() => {
         axios
             .get(`https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
             .then((response) => {
                 setCharacters(response.data.data.results);
+                setAllCharacters(response.data.data.results);
             })
             .catch((error) => {
                 console.log(error);
@@ -37,6 +43,7 @@ export default function Characters() {
             .get(`https://gateway.marvel.com/v1/public/comics?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
             .then((response) => {
                 setComics(response.data.data.results);
+                setAllComics(response.data.data.results);
             })
             .catch((error) => {
                 console.log(error);
@@ -73,6 +80,34 @@ export default function Characters() {
         ));
     };
 
+
+    const characterSubmit = (e) =>{
+        e.preventDefault();
+        console.log("jhgdhf");
+
+        axios
+        .get(`https://gateway.marvel.com:443/v1/public/characters/${searchCharacterId}?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
+        .then((response) => {
+            setCharacters(response.data.data.results);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
+
+    const comicSubmit = (e) =>{
+        e.preventDefault();
+
+        axios
+        .get(`https://gateway.marvel.com:443/v1/public/comics/${searchComicId}?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
+        .then((response) => {
+            setComics(response.data.data.results);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
+
     return (
         <>
             <Helmet>
@@ -83,14 +118,23 @@ export default function Characters() {
                 <Paragraph>Explore the Famous Marvel Characters</Paragraph>
             </TopContainer>
 
-            <Form>
-                <Search type="text" placeholder="Search your Characters" />
-                <Go type="submit" value="Go" />
+            <Form onSubmit={(e)=>{e.preventDefault()}}>
+                <Search type="text" placeholder="Search your Characters using id..! try 1017100" onChange={ (e) => { setSearchCharacterId(e.target.value) } } />
+                <Go type="submit" value="Go" onClick={characterSubmit} />
+                <Clear onClick={()=>{setCharacters(allCharacters)}} >Clear</Clear>
             </Form>
 
             <CharactersContainer>{renderCharacters()}</CharactersContainer>
             <Load onClick={() => {setCharacterShow(characterShow => !characterShow)}} >{characterShow ? 'Load Less':'Load More'}</Load>
+
             <Comicparagraph>Explore the Famous Marvel Comics</Comicparagraph>
+
+            <Form onSubmit={(e)=>{e.preventDefault()}} >
+                <Search type="text" placeholder="Search your Comics using id..! try 3627" onChange={ (e) => { setSearchComicId(e.target.value) } } />
+                <Go type="submit" value="Go" onClick={comicSubmit} />
+                <Clear onClick={()=>{setComics(allComics)}} >Clear</Clear>
+            </Form>
+
             <CharactersContainer>{renderComics()}</CharactersContainer>
             <Load onClick={() => {setComicShow(comicShow => !comicShow)}}  >{comicShow ? 'Load Less':'Load More'}</Load>
 
@@ -111,6 +155,7 @@ const Paragraph = styled.p`
     font-size: 22px;
     color: #9292ed;
     font-weight: 900;
+    margin-bottom: 35px;
 `;
 const CharactersContainer = styled.ul`
     display: flex;
@@ -164,6 +209,7 @@ const Comicparagraph = styled.p`
     font-weight: 900;
     width: 90%;
     margin: 0 auto ;
+    margin-bottom: 35px;
 `;
 const Form = styled.form`
     width: 50%;
@@ -171,17 +217,37 @@ const Form = styled.form`
     padding:0;
 `;
 const Search = styled.input`
-    font-size: 22px;
-    color: #9292ed;
-    font-weight: 900;
-    width: 90%;
-    margin: 0 auto ;
+    width: 65%;
+    height: 100%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 3px solid #857e7e;
+    &:focus{
+        color:#000;
+    }
 `;
 const Go = styled.input`
-    font-size: 22px;
-    color: #9292ed;
-    font-weight: 900;
-    width: 90%;
-    margin: 0 auto ;
+    width: 15%;
+    height: 100%;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #046bf6;
+    color:#fff;
+    font-weight:900;
+    margin-left: 20px;
+
+`;
+const Clear = styled.button`
+    width: 15%;
+    height: 100%;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #046bf6;
+    color:#fff;
+    font-weight:900;
+    margin-left: 20px;
+
 `;
 
