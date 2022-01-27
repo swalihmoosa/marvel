@@ -87,7 +87,7 @@ export default function Characters() {
             <Load onClick={() => {setCharacterShow(characterShow => !characterShow)}} >{characterShow ? 'Load Less':'Load More'}</Load>
             <Comicparagraph>Explore the Famous Marvel Comics</Comicparagraph>
             <CharactersContainer>{renderComics()}</CharactersContainer>
-            <Load onClick={() => {setComicShow(comicShow => !comicShow)}}  >{characterShow ? 'Load Less':'Load More'}</Load>
+            <Load onClick={() => {setComicShow(comicShow => !comicShow)}}  >{comicShow ? 'Load Less':'Load More'}</Load>
 
         </>
     );
