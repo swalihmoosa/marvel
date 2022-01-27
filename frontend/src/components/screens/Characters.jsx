@@ -83,8 +83,9 @@ export default function Characters() {
 
     const characterSubmit = (e) =>{
         e.preventDefault();
+        // document.getElementById("characterSubmit").reset();
         console.log("jhgdhf");
-
+        
         axios
         .get(`https://gateway.marvel.com:443/v1/public/characters/${searchCharacterId}?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
         .then((response) => {
@@ -97,6 +98,8 @@ export default function Characters() {
 
     const comicSubmit = (e) =>{
         e.preventDefault();
+        console.log("comicsubmit");
+        // document.getElementById("characterSubmit").reset();
 
         axios
         .get(`https://gateway.marvel.com:443/v1/public/comics/${searchComicId}?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
@@ -118,7 +121,7 @@ export default function Characters() {
                 <Paragraph>Explore the Famous Marvel Characters</Paragraph>
             </TopContainer>
 
-            <Form onSubmit={(e)=>{e.preventDefault()}}>
+            <Form onSubmit={(e)=>{e.preventDefault()}} id="submit" >
                 <Search type="text" placeholder="Search your Characters using id..! try 1017100" onChange={ (e) => { setSearchCharacterId(e.target.value) } } />
                 <Go type="submit" value="Go" onClick={characterSubmit} />
                 <Clear onClick={()=>{setCharacters(allCharacters)}} >Clear</Clear>
@@ -129,7 +132,7 @@ export default function Characters() {
 
             <Comicparagraph>Explore the Famous Marvel Comics</Comicparagraph>
 
-            <Form onSubmit={(e)=>{e.preventDefault()}} >
+            <Form onSubmit={(e)=>{e.preventDefault()}} id="submit" >
                 <Search type="text" placeholder="Search your Comics using id..! try 3627" onChange={ (e) => { setSearchComicId(e.target.value) } } />
                 <Go type="submit" value="Go" onClick={comicSubmit} />
                 <Clear onClick={()=>{setComics(allComics)}} >Clear</Clear>

@@ -22,8 +22,10 @@ function App() {
             case "LOGOUT":
                 setUserData(null);
                 localStorage.clear();
+                break;
             case "LOGIN":
                 setUserData(action.payload);
+                break;
             default:
                 break;
         }

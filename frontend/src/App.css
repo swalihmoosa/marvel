@@ -236,9 +236,9 @@ div.log a.log{
   top: 0;
   text-decoration: none;
 }
-.show:nth-child(n+9){
+.show:nth-child(n+5){
   display: block;
 }
-.hide:nth-child(n+9){
+.hide:nth-child(n+5){
   display: none;
 }

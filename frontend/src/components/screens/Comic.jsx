@@ -102,10 +102,6 @@ const GalleryImage = styled.img`
     width: 100%;
     display: block;
 `;
-const SubHeading = styled.h1`
-    margin-bottom: 20px;
-    font-weight: 900;
-`;
 const CategoryName = styled.span`
     padding: 5px 10px;
     border-radius: 20px;
@@ -114,16 +110,16 @@ const CategoryName = styled.span`
     color: #9c9c9c;
     margin-right: 15px;
 `;
-const ItemContainer = styled.ul`
-    width:25%;
-`;
-const GalleryItem = styled.li`
-    width:100%;
-    padding: 5px 10px;
-    border-radius: 20px;
-    display: inline-block;
-    border: 1px solid #9c9c9c;
-    color: #9c9c9c;
-    margin-bottom: 15px;
-    text-align:center;
-`;
+// const ItemContainer = styled.ul`
+//     width:25%;
+// `;
+// const GalleryItem = styled.li`
+//     width:100%;
+//     padding: 5px 10px;
+//     border-radius: 20px;
+//     display: inline-block;
+//     border: 1px solid #9c9c9c;
+//     color: #9c9c9c;
+//     margin-bottom: 15px;
+//     text-align:center;
+// `;
