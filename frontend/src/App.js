@@ -8,6 +8,7 @@ import SignUp from './components/screens/SignUp';
 import PrivateRoute from './components/PrivateRoute';
 import Header from './components/includes/Header';
 import React, { useEffect, useState } from 'react';
+import Comic from './components/screens/Comic';
 
 
 export const UserContext = React.createContext();
@@ -42,6 +43,9 @@ function App() {
                     </Route>
                     <Route element={<PrivateRoute />}>
                         <Route exact path='/character/:id' element={<Character />}/>
+                    </Route>
+                    <Route element={<PrivateRoute />}>
+                        <Route exact path='/comic/:id' element={<Comic />}/>
                     </Route>
                     <Route path="/login/" element={<Login />}/>
                     <Route path="/register/" element={<SignUp />}/>

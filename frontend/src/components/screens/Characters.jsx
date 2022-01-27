@@ -20,12 +20,21 @@ import { Link } from "react-router-dom";
 
 export default function Characters() {
     const [characters, setCharacters] = useState([]);
+    const [comics, setComics] = useState([]);
 
     useEffect(() => {
         axios
             .get(`https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
             .then((response) => {
                 setCharacters(response.data.data.results);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        axios
+            .get(`https://gateway.marvel.com/v1/public/comics?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
+            .then((response) => {
+                setComics(response.data.data.results);
             })
             .catch((error) => {
                 console.log(error);
@@ -47,6 +56,21 @@ export default function Characters() {
         ));
     };
 
+    const renderComics = () => {
+        return comics.map((comic) => (
+            <CharacterCard key={comic.id} >
+                <CharacterCardLink to={`/comic/${comic.id}/`}>
+                    <CharacterImageContainer>
+                        <CharacterImage src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt="Image" />
+                    </CharacterImageContainer>
+                    <CharacterBottomContainer>
+                        <CharacterTitle>{comic.title}</CharacterTitle>
+                    </CharacterBottomContainer>
+                </CharacterCardLink>
+            </CharacterCard>
+        ));
+    };
+
     return (
         <>
             <Helmet>
@@ -58,7 +82,11 @@ export default function Characters() {
             </TopContainer>
 
             <CharactersContainer>{renderCharacters()}</CharactersContainer>
-            <PaginationContainer></PaginationContainer>
+            <TopContainer>
+                <Paragraph>Explore the Famous Marvel Comics</Paragraph>
+            </TopContainer>            
+            <CharactersContainer>{renderComics()}</CharactersContainer>
+
         </>
     );
 }
@@ -111,7 +139,4 @@ const CharacterTitle = styled.h3`
     margin-bottom: 10px;
     font-size: 20px;
 `;
-const PaginationContainer = styled.div`
-    width: 90%;
-    margin: 50px auto 0;
-`;
+
