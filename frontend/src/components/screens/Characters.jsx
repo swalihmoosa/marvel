@@ -21,6 +21,8 @@ import { Link } from "react-router-dom";
 export default function Characters() {
     const [characters, setCharacters] = useState([]);
     const [comics, setComics] = useState([]);
+    const [characterShow, setCharacterShow] = useState(false);
+    const [comicShow, setComicShow] = useState(false);
 
     useEffect(() => {
         axios
@@ -43,7 +45,7 @@ export default function Characters() {
 
     const renderCharacters = () => {
         return characters.map((character) => (
-            <CharacterCard key={character.id} >
+            <CharacterCard key={character.id} className={characterShow ? 'show' : 'hide'} >
                 <CharacterCardLink to={`/character/${character.id}/`}>
                     <CharacterImageContainer>
                         <CharacterImage src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt="Image" />
@@ -58,7 +60,7 @@ export default function Characters() {
 
     const renderComics = () => {
         return comics.map((comic) => (
-            <CharacterCard key={comic.id} >
+            <CharacterCard key={comic.id} className={comicShow ? 'show' : 'hide'} >
                 <CharacterCardLink to={`/comic/${comic.id}/`}>
                     <CharacterImageContainer>
                         <CharacterImage src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt="Image" />
@@ -82,10 +84,10 @@ export default function Characters() {
             </TopContainer>
 
             <CharactersContainer>{renderCharacters()}</CharactersContainer>
-            <TopContainer>
-                <Paragraph>Explore the Famous Marvel Comics</Paragraph>
-            </TopContainer>            
+            <Load onClick={() => {setCharacterShow(characterShow => !characterShow)}} >{characterShow ? 'Load Less':'Load More'}</Load>
+            <Comicparagraph>Explore the Famous Marvel Comics</Comicparagraph>
             <CharactersContainer>{renderComics()}</CharactersContainer>
+            <Load onClick={() => {setComicShow(comicShow => !comicShow)}}  >{characterShow ? 'Load Less':'Load More'}</Load>
 
         </>
     );
@@ -118,6 +120,7 @@ const CharacterCard = styled.li`
     &:nth-child(4n) {
         margin-right: 0;
     }
+
 `;
 const CharacterCardLink = styled(Link)`
     display: block;
@@ -138,5 +141,23 @@ const CharacterBottomContainer = styled.div`
 const CharacterTitle = styled.h3`
     margin-bottom: 10px;
     font-size: 20px;
+`;
+const Load = styled.button`
+    background: #faa635;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    padding: 10px 30px;
+    transition: all 0.25s ease-out;
+    margin-left: 10%;
+    font-weight: 900;
+    margin-bottom: 100px;
+`
+const Comicparagraph = styled.p`
+    font-size: 22px;
+    color: #9292ed;
+    font-weight: 900;
+    width: 90%;
+    margin: 0 auto ;
 `;
 
