@@ -39,6 +39,9 @@ export default function Character() {
                             <GalleryItem >{item.name}</GalleryItem>
                         ))}
                     </ItemContainer>
+                    <DescriptionContainer>
+                        {character.description}
+                    </DescriptionContainer>
                 </Item>
             </MainContainer>
         ));
@@ -61,7 +64,7 @@ export default function Character() {
 
 const TopContainer = styled.div`
     width: 90%;
-    margin: 100px auto 0;
+    margin: 50px auto 0;
 `;
 const Heading = styled.h1`
     font-size: 36px;
@@ -78,6 +81,7 @@ const CharactersContainer = styled.ul`
     flex-wrap: wrap;
     width: 90%;
     margin: 50px auto 0;
+    padding:0 0 5% 0;
 `;
 
 const MainContainer = styled.div`
@@ -100,6 +104,7 @@ const GalleryImageItem = styled.div`
 const Item = styled.div`
     display: flex;
     justify-content: space-between;
+    flex-wrap:wrap;
     width: 100%;
     align-items:center;
 `;
@@ -131,4 +136,11 @@ const GalleryItem = styled.li`
     color: #9c9c9c;
     margin-bottom: 15px;
     text-align:center;
+`;
+const DescriptionContainer = styled.p`
+    width:100%;
+    margin: 50px 0 0 0;
+    color: #4a4a4a;
+    text-align:center;
+    font-size: 20px;
 `;
