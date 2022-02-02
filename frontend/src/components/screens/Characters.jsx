@@ -137,7 +137,10 @@ export default function Characters() {
                 <Paragraph>{ isClicked ? "Explore the Famous Marvel Characters" : "Explore the Famous Marvel Comics"}</Paragraph>
             </TopContainer>
 
-            <Load onClick={() => {setIsClicked(isClicked => !isClicked)}} >click</Load>
+            <LoadContainer>
+                <LoadCharacter onClick={() => {setIsClicked(true)}} className={ isClicked ? 'true' : '' } >Characters</LoadCharacter>
+                <LoadComic onClick={() => {setIsClicked(false)}} >Comics</LoadComic>
+            </LoadContainer>
 
             <Form onSubmit={(e)=>{e.preventDefault()}} id="submit" >
                 <Search type="text" placeholder={ isClicked ? "Search your Characters using id..! try 1017100" : "Search your Comics using id..! try 3627"} value={ isClicked ? searchCharacterId : searchComicId} 
@@ -261,4 +264,31 @@ const Clear = styled.button`
     margin-left: 20px;
 
 `;
+const LoadContainer = styled.div`
+    display: flex;
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+`;
+const LoadCharacter = styled.button`
+    background: #fbdaae;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    padding: 10px 30px;
+    transition: all 0.25s ease-out;
+    font-weight: 900;
+    margin-left: auto;
+    margin-right: 20px;
+`;
+const LoadComic = styled.button`
+    background: #faa635;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    padding: 10px 30px;
+    transition: all 0.25s ease-out;
+    font-weight: 900;
+    margin-right: auto;
+`
 
