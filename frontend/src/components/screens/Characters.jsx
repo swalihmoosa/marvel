@@ -29,6 +29,8 @@ export default function Characters() {
     const [comicShow, setComicShow] = useState(false);
     const [searchComicId, setSearchComicId] = useState("");
 
+    const [isClicked, setIsClicked] = useState(true)
+
     useEffect(() => {
         axios
             .get(`https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=f7a9b0d8dfa07041696a04e6df7da8c2&hash=6c8619175e88472183b745e1dfd021c9`)
@@ -132,28 +134,20 @@ export default function Characters() {
             </Helmet>
             <TopContainer>
                 <Heading>Welcome </Heading>
-                <Paragraph>Explore the Famous Marvel Characters</Paragraph>
+                <Paragraph>{ isClicked ? "Explore the Famous Marvel Characters" : "Explore the Famous Marvel Comics"}</Paragraph>
             </TopContainer>
 
-            <Form onSubmit={(e)=>{e.preventDefault()}} id="submit" >
-                <Search type="text" placeholder="Search your Characters using id..! try 1017100" value={searchCharacterId} onChange={ (e) => { setSearchCharacterId(e.target.value) } } />
-                <Go type="submit" value="Go" onClick={characterSubmit} />
-                <Clear onClick={()=>{setCharacters(allCharacters)}} >Clear</Clear>
-            </Form>
-
-            <CharactersContainer>{renderCharacters()}</CharactersContainer>
-            <Load onClick={() => {setCharacterShow(characterShow => !characterShow)}} >{characterShow ? 'Load Less':'Load More'}</Load>
-
-            <Comicparagraph>Explore the Famous Marvel Comics</Comicparagraph>
+            <Load onClick={() => {setIsClicked(isClicked => !isClicked)}} >click</Load>
 
             <Form onSubmit={(e)=>{e.preventDefault()}} id="submit" >
-                <Search type="text" placeholder="Search your Comics using id..! try 3627" value={searchComicId} onChange={ (e) => { setSearchComicId(e.target.value) } } />
-                <Go type="submit" value="Go" onClick={comicSubmit} />
-                <Clear onClick={()=>{setComics(allComics)}} >Clear</Clear>
+                <Search type="text" placeholder={ isClicked ? "Search your Characters using id..! try 1017100" : "Search your Comics using id..! try 3627"} value={ isClicked ? searchCharacterId : searchComicId} 
+                onChange={ (e) => { isClicked ? setSearchCharacterId(e.target.value) : setSearchComicId(e.target.value) } } />
+                <Go type="submit" value="Go" onClick={ isClicked ? characterSubmit : comicSubmit} />
+                <Clear onClick={()=>{ isClicked ? setCharacters(allCharacters) : setComics(allComics) }} >Clear</Clear>
             </Form>
 
-            <CharactersContainer>{renderComics()}</CharactersContainer>
-            <Load onClick={() => {setComicShow(comicShow => !comicShow)}}  >{comicShow ? 'Load Less':'Load More'}</Load>
+            <CharactersContainer>{ isClicked ? renderCharacters() : renderComics()}</CharactersContainer>
+            <Load onClick={() => { isClicked ? setCharacterShow(characterShow => !characterShow) : setComicShow(comicShow => !comicShow)}} >{characterShow ? 'Load Less':'Load More'}</Load>
 
         </>
     );

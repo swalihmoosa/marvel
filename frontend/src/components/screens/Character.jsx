@@ -30,6 +30,9 @@ export default function Character() {
                     </CategoryName>
                 </InfoContainer>
                 <Item>
+                    <DescriptionContainer>
+                        {character.description}
+                    </DescriptionContainer>
                     <GalleryImageItem>
                         <GalleryImage src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt="Image" />
                     </GalleryImageItem>
@@ -39,9 +42,6 @@ export default function Character() {
                             <GalleryItem >{item.name}</GalleryItem>
                         ))}
                     </ItemContainer>
-                    <DescriptionContainer>
-                        {character.description}
-                    </DescriptionContainer>
                 </Item>
             </MainContainer>
         ));
@@ -139,7 +139,7 @@ const GalleryItem = styled.li`
 `;
 const DescriptionContainer = styled.p`
     width:100%;
-    margin: 50px 0 0 0;
+    margin: 0 0 50px 0;
     color: #4a4a4a;
     text-align:center;
     font-size: 20px;

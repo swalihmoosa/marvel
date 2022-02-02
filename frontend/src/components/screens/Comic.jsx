@@ -34,6 +34,9 @@ export default function Comic() {
                     <GalleryImageItem>
                         <GalleryImage src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt="Image" />
                     </GalleryImageItem>
+                    <DescriptionContainer>
+                        {comic.description}
+                    </DescriptionContainer>
                 </Item>
             </MainContainer>
         ));
@@ -73,6 +76,7 @@ const CharactersContainer = styled.ul`
     flex-wrap: wrap;
     width: 90%;
     margin: 50px auto 0;
+    padding:0 0 5% 0;
 `;
 
 const MainContainer = styled.div`
@@ -109,6 +113,13 @@ const CategoryName = styled.span`
     border: 1px solid #9c9c9c;
     color: #9c9c9c;
     margin-right: 15px;
+`;
+const DescriptionContainer = styled.p`
+    width:100%;
+    margin: 50px 0 0 0;
+    color: #4a4a4a;
+    text-align:center;
+    font-size: 20px;
 `;
 // const ItemContainer = styled.ul`
 //     width:25%;
