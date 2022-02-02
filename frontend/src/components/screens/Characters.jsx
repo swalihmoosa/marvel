@@ -139,7 +139,7 @@ export default function Characters() {
 
             <LoadContainer>
                 <LoadCharacter onClick={() => {setIsClicked(true)}} className={ isClicked ? 'true' : '' } >Characters</LoadCharacter>
-                <LoadComic onClick={() => {setIsClicked(false)}} >Comics</LoadComic>
+                <LoadComic onClick={() => {setIsClicked(false)}} className={ isClicked ? '' : 'true' } >Comics</LoadComic>
             </LoadContainer>
 
             <Form onSubmit={(e)=>{e.preventDefault()}} id="submit" >
@@ -150,7 +150,8 @@ export default function Characters() {
             </Form>
 
             <CharactersContainer>{ isClicked ? renderCharacters() : renderComics()}</CharactersContainer>
-            <Load onClick={() => { isClicked ? setCharacterShow(characterShow => !characterShow) : setComicShow(comicShow => !comicShow)}} >{characterShow ? 'Load Less':'Load More'}</Load>
+            <Load onClick={() => { isClicked ? setCharacterShow(characterShow => !characterShow) : setComicShow(comicShow => !comicShow)}} >
+                { isClicked ? characterShow ? 'Load Less':'Load More' : comicShow ? 'Load Less':'Load More'}</Load>
 
         </>
     );
@@ -272,23 +273,34 @@ const LoadContainer = styled.div`
 `;
 const LoadCharacter = styled.button`
     background: #fbdaae;
+    border : 2px solid faa635;
     border-radius: 3px;
-    color: white;
+    color: #faa635;
     display: inline-block;
     padding: 10px 30px;
     transition: all 0.25s ease-out;
     font-weight: 900;
     margin-left: auto;
     margin-right: 20px;
+
+    &.true{
+        background : #faa635;
+        color : white;
+    }
 `;
 const LoadComic = styled.button`
-    background: #faa635;
+    background: #fbdaae;
     border-radius: 3px;
-    color: white;
+    color: #faa635;
     display: inline-block;
     padding: 10px 30px;
     transition: all 0.25s ease-out;
     font-weight: 900;
     margin-right: auto;
+
+    &.true{
+        background : #faa635;
+        color: #fff;
+    }
 `
 
