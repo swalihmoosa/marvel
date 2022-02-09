@@ -162,6 +162,7 @@ const Title = styled.h1`
     @media all and (max-width: 640px){
     }
     @media all and (max-width: 480px){
+        font-size: 36px;
     }
     @media all and (max-width: 360px){
     }
