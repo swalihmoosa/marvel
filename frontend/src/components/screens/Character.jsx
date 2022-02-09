@@ -123,6 +123,7 @@ const CharactersContainer = styled.ul`
     @media all and (max-width: 980px){
     }
     @media all and (max-width: 768px){
+        margin:0 auto;
     }
     @media all and (max-width: 640px){
     }
@@ -195,6 +196,7 @@ const GalleryImageItem = styled.div`
     @media all and (max-width: 640px){
     }
     @media all and (max-width: 480px){
+        width: 100%;
     }
     @media all and (max-width: 360px){
     }
@@ -257,6 +259,7 @@ const CategoryName = styled.span`
     border: 1px solid #9c9c9c;
     color: #9c9c9c;
     margin-right: 15px;
+    font-size: 14px;
     @media all and (max-width: 1280px){
     }
     @media all and (max-width: 980px){
