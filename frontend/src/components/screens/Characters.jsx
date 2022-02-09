@@ -143,7 +143,8 @@ export default function Characters() {
             </LoadContainer>
 
             <Form onSubmit={(e)=>{e.preventDefault()}} id="submit" >
-                <Search type="text" placeholder={ isClicked ? "Search your Characters using id..! try 1017100" : "Search your Comics using id..! try 3627"} value={ isClicked ? searchCharacterId : searchComicId} 
+                <Search type="text" placeholder={ isClicked ? "Search your Characters using id..! try 1017100" : "Search your Comics using id..! try 3627"} 
+                value={ isClicked ? searchCharacterId : searchComicId} 
                 onChange={ (e) => { isClicked ? setSearchCharacterId(e.target.value) : setSearchComicId(e.target.value) } } />
                 <Go type="submit" value="Go" onClick={ isClicked ? characterSubmit : comicSubmit} />
                 <Clear onClick={()=>{ isClicked ? setCharacters(allCharacters) : setComics(allComics) }} >Clear</Clear>
@@ -160,23 +161,71 @@ export default function Characters() {
 const TopContainer = styled.div`
     width: 90%;
     margin: 100px auto 0;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const Heading = styled.h1`
     font-size: 36px;
     margin-bottom: 20px;
     font-weight: 900;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const Paragraph = styled.p`
     font-size: 22px;
     color: #9292ed;
     font-weight: 900;
     margin-bottom: 35px;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const CharactersContainer = styled.ul`
     display: flex;
     flex-wrap: wrap;
     width: 90%;
     margin: 50px auto 0;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const CharacterCard = styled.li`
     width: 23.5%;
@@ -186,11 +235,35 @@ const CharacterCard = styled.li`
         margin-right: 0;
     }
 
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const CharacterCardLink = styled(Link)`
     display: block;
     appearance: none;
     text-decoration:none;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const CharacterImageContainer = styled.div``
 const CharacterImage = styled.img`
@@ -199,13 +272,49 @@ const CharacterImage = styled.img`
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     height: 400px;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const CharacterBottomContainer = styled.div`
     padding: 10px 15px;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const CharacterTitle = styled.h3`
     margin-bottom: 10px;
     font-size: 20px;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const Load = styled.button`
     background: #faa635;
@@ -218,18 +327,43 @@ const Load = styled.button`
     font-weight: 900;
     margin-bottom: 100px;
 `
-const Comicparagraph = styled.p`
-    font-size: 22px;
-    color: #9292ed;
-    font-weight: 900;
-    width: 90%;
-    margin: 0 auto ;
-    margin-bottom: 35px;
-`;
+// const Comicparagraph = styled.p`
+//     font-size: 22px;
+//     color: #9292ed;
+//     font-weight: 900;
+//     width: 90%;
+//     margin: 0 auto ;
+//     margin-bottom: 35px;
+//     @media all and (max-width: 1280px){
+//     }
+//     @media all and (max-width: 980px){
+//     }
+//     @media all and (max-width: 768px){
+//     }
+//     @media all and (max-width: 640px){
+//     }
+//     @media all and (max-width: 480px){
+//     }
+//     @media all and (max-width: 360px){
+//     }
+// `;
 const Form = styled.form`
     width: 50%;
     margin: 0 auto;
     padding:0;
+    @media all and (max-width: 1280px){
+        width: 70%;
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const Search = styled.input`
     width: 65%;
@@ -239,6 +373,18 @@ const Search = styled.input`
     border: 3px solid #857e7e;
     &:focus{
         color:#000;
+    }
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
     }
 `;
 const Go = styled.input`
@@ -252,6 +398,18 @@ const Go = styled.input`
     font-weight:900;
     margin-left: 20px;
 
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const Clear = styled.button`
     width: 15%;
@@ -264,12 +422,36 @@ const Clear = styled.button`
     font-weight:900;
     margin-left: 20px;
 
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const LoadContainer = styled.div`
     display: flex;
     width: 30%;
     margin: 0 auto;
     margin-bottom: 25px;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const LoadCharacter = styled.button`
     background: #fbdaae;
@@ -286,6 +468,18 @@ const LoadCharacter = styled.button`
     &.true{
         background : #faa635;
         color : white;
+    }
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
     }
 `;
 const LoadComic = styled.button`
