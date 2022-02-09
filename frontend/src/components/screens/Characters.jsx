@@ -236,8 +236,22 @@ const CharacterCard = styled.li`
     }
 
     @media all and (max-width: 1280px){
+        width:31%;
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+        &:nth-child(4n) {
+            margin-right: 2%;
+        }
     }
     @media all and (max-width: 980px){
+        width:49%;
+        &:nth-child(3n) {
+            margin-right: 2%;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
     }
     @media all and (max-width: 768px){
     }
@@ -277,6 +291,7 @@ const CharacterImage = styled.img`
     @media all and (max-width: 980px){
     }
     @media all and (max-width: 768px){
+        height: 200px;
     }
     @media all and (max-width: 640px){
     }
@@ -339,7 +354,7 @@ const Load = styled.button`
 //     @media all and (max-width: 980px){
 //     }
 //     @media all and (max-width: 768px){
-//     }
+//     }100%
 //     @media all and (max-width: 640px){
 //     }
 //     @media all and (max-width: 480px){
@@ -352,11 +367,15 @@ const Form = styled.form`
     margin: 0 auto;
     padding:0;
     @media all and (max-width: 1280px){
-        width: 70%;
+        width: 85%;
     }
     @media all and (max-width: 980px){
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
     }
     @media all and (max-width: 768px){
+        flex-wrap:wrap;
     }
     @media all and (max-width: 640px){
     }
@@ -379,6 +398,8 @@ const Search = styled.input`
     @media all and (max-width: 980px){
     }
     @media all and (max-width: 768px){
+        width:100%;
+        margin-bottom:10px;
     }
     @media all and (max-width: 640px){
     }
@@ -403,6 +424,7 @@ const Go = styled.input`
     @media all and (max-width: 980px){
     }
     @media all and (max-width: 768px){
+        margin-left:auto;
     }
     @media all and (max-width: 640px){
     }
@@ -427,6 +449,7 @@ const Clear = styled.button`
     @media all and (max-width: 980px){
     }
     @media all and (max-width: 768px){
+        margin-right:auto;
     }
     @media all and (max-width: 640px){
     }
