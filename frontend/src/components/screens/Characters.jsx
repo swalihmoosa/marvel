@@ -214,6 +214,7 @@ const CharactersContainer = styled.ul`
     flex-wrap: wrap;
     width: 90%;
     margin: 50px auto 0;
+    padding:0;
     @media all and (max-width: 1280px){
     }
     @media all and (max-width: 980px){
@@ -256,6 +257,11 @@ const CharacterCard = styled.li`
     @media all and (max-width: 768px){
     }
     @media all and (max-width: 640px){
+        width: 95%;
+        margin: 0 auto;
+        &:nth-child(2n) {
+            margin-right: auto;
+        }
     }
     @media all and (max-width: 480px){
     }
@@ -294,6 +300,7 @@ const CharacterImage = styled.img`
         height: 200px;
     }
     @media all and (max-width: 640px){
+        height: 300px;
     }
     @media all and (max-width: 480px){
     }
@@ -427,10 +434,13 @@ const Go = styled.input`
         margin-left:auto;
     }
     @media all and (max-width: 640px){
+        width: 20%;
     }
     @media all and (max-width: 480px){
+        width: 25%;
     }
     @media all and (max-width: 360px){
+        width: 30%;
     }
 `;
 const Clear = styled.button`
@@ -452,10 +462,13 @@ const Clear = styled.button`
         margin-right:auto;
     }
     @media all and (max-width: 640px){
+        width: 20%;
     }
     @media all and (max-width: 480px){
+        width: 25%;
     }
     @media all and (max-width: 360px){
+        width: 30%;
     }
 `;
 const LoadContainer = styled.div`
@@ -468,6 +481,7 @@ const LoadContainer = styled.div`
     @media all and (max-width: 980px){
     }
     @media all and (max-width: 768px){
+        width: 100%;
     }
     @media all and (max-width: 640px){
     }
