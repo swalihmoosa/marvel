@@ -65,16 +65,52 @@ export default function Character() {
 const TopContainer = styled.div`
     width: 90%;
     margin: 50px auto 0;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const Heading = styled.h1`
     font-size: 36px;
     margin-bottom: 20px;
     font-weight: 900;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const Paragraph = styled.p`
     font-size: 22px;
     color: #9292ed;
     font-weight: 900;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const CharactersContainer = styled.ul`
     display: flex;
@@ -82,24 +118,86 @@ const CharactersContainer = styled.ul`
     width: 90%;
     margin: 50px auto 0;
     padding:0 0 5% 0;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 
 const MainContainer = styled.div`
     width: 70%;
     margin: 70px auto 0;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+        width: 90%;
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const Title = styled.h1`
     font-size: 48px;
     margin-bottom: 15px;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const InfoContainer = styled.div`
     display: flex;
     margin-bottom: 15px;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const GalleryImageItem = styled.div`
     border-radius: 25px;
     overflow:hidden;
     width:70%;
+    @media all and (max-width: 1280px){
+        margin: 0 auto 50px;
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const Item = styled.div`
     display: flex;
@@ -107,14 +205,50 @@ const Item = styled.div`
     flex-wrap:wrap;
     width: 100%;
     align-items:center;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const GalleryImage = styled.img`
     width: 100%;
     display: block;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const SubHeading = styled.h1`
     margin-bottom: 20px;
     font-weight: 900;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const CategoryName = styled.span`
     padding: 5px 10px;
@@ -123,9 +257,34 @@ const CategoryName = styled.span`
     border: 1px solid #9c9c9c;
     color: #9c9c9c;
     margin-right: 15px;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const ItemContainer = styled.ul`
     width:25%;
+    @media all and (max-width: 1280px){
+        width: 100%;
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const GalleryItem = styled.li`
     width:100%;
@@ -136,6 +295,21 @@ const GalleryItem = styled.li`
     color: #9c9c9c;
     margin-bottom: 15px;
     text-align:center;
+    @media all and (max-width: 1280px){
+        width: 70%;
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+        width: 80%;
+    }
+    @media all and (max-width: 640px){
+        width: 100%;
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const DescriptionContainer = styled.p`
     width:100%;
@@ -143,4 +317,16 @@ const DescriptionContainer = styled.p`
     color: #4a4a4a;
     text-align:center;
     font-size: 20px;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;

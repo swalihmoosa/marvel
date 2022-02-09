@@ -41,6 +41,18 @@ const HeaderContainer = styled.div`
     padding: 30px 0;
     display: flex;
     justify-content: space-between;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const LogoContainer = styled.div`
     width: 65px;
@@ -48,10 +60,34 @@ const LogoContainer = styled.div`
 const Logo = styled.img`
     width: 100%;
     display: block;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const RightContainer = styled.div`
     display: flex;
     align-items: center;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 const LoginButton = styled(Link)`
     background: #046bf6;
@@ -62,6 +98,18 @@ const LoginButton = styled(Link)`
     border-radius: 4px;
     font-weight: bold;
     text-decoration:none;
+    @media all and (max-width: 1280px){
+    }
+    @media all and (max-width: 980px){
+    }
+    @media all and (max-width: 768px){
+    }
+    @media all and (max-width: 640px){
+    }
+    @media all and (max-width: 480px){
+    }
+    @media all and (max-width: 360px){
+    }
 `;
 
 export default Header;
