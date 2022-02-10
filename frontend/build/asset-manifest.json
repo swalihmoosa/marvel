@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.f57c19d3.css",
-    "main.js": "/static/js/main.05868604.js",
+    "main.css": "/static/css/main.51c0bc48.css",
+    "main.js": "/static/js/main.a86281b3.js",
     "static/js/787.7f02c0bd.chunk.js": "/static/js/787.7f02c0bd.chunk.js",
     "static/media/favicon.ico": "/static/media/favicon.ee140446c1c0c78ce305.ico",
     "static/media/marvel-nawpic.jpg": "/static/media/marvel-nawpic.771e75d06cb6ad852987.jpg",
     "static/media/marvel-phone-nawpic.jpg": "/static/media/marvel-phone-nawpic.51a4d46f415ab015de69.jpg",
     "index.html": "/index.html",
-    "main.f57c19d3.css.map": "/static/css/main.f57c19d3.css.map",
-    "main.05868604.js.map": "/static/js/main.05868604.js.map",
+    "main.51c0bc48.css.map": "/static/css/main.51c0bc48.css.map",
+    "main.a86281b3.js.map": "/static/js/main.a86281b3.js.map",
     "787.7f02c0bd.chunk.js.map": "/static/js/787.7f02c0bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f57c19d3.css",
-    "static/js/main.05868604.js"
+    "static/css/main.51c0bc48.css",
+    "static/js/main.a86281b3.js"
   ]
 }
